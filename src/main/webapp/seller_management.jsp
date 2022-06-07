@@ -13,19 +13,7 @@
             }
         }
     </script>
-    <style>
-        #s_tab {
-            float: none;
-            zoom: 1;
-        }
-
-        .s_tab {
-            line-height: 18px;
-            margin: 0 auto;
-            text-align: center;
-        }
-    </style>
-
+    <link type="text/css" href="./commonStyle.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -34,17 +22,18 @@
     <form action="sellersearch" method="post">
         <input type="text" name="seller_search">
         &nbsp;&nbsp;
-        <input type="submit" value="搜索">
+        <input type="submit" class="buttonSearch" value="搜索">
     </form>
     <div class="s_tab_inner">
         <a href="../e_commerce_war_exploded/selleradd">新增商家</a>
         <a href="../e_commerce_war_exploded/select.jsp">回到上一级</a>
+        <a href="../e_commerce_war_exploded/"> 注销 </a>
     </div>
 </div>
 <hr/>
 <br/>
 <div align="center">
-    <table border="1">
+    <table class="styled-table">
         <tr>
             <th>序号</th>
             <th>商家名称</th>
@@ -55,10 +44,10 @@
                 <td>${status.index + 1}</td>
                 <td>${seller.seller_name}</td>
                 <td>
-                    <input type="button" value="删除" onclick="confirm_del(${seller.seller_no})" />
-                    <input type="button" value="修改"
+                    <input type="button" value="删除"  class="button"onclick="confirm_del(${seller.seller_no})" />
+                    <input type="button" value="修改" class="button"
                            onclick="location.href='sellerupdate?seller_no=${seller.seller_no}'">
-                    <input type="button" value="管理商品"
+                    <input type="button" value="管理商品" class="button"
                            onclick="location.href='seller_commodities?seller_no=${seller.seller_no}'">
                 </td>
             </tr>

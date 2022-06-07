@@ -21,15 +21,10 @@ public class ServletLogin extends HttpServlet {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        if(status == "100"){
+        if(status.equals("100")){
             request.getRequestDispatcher("select.jsp").forward(request,response);
         }
         else{
-            try {
-                setAllSellers();
-            } catch (SQLException | ClassNotFoundException e) {
-                e.printStackTrace();
-            }
             response.sendRedirect("/e_commerce_war_exploded/login.jsp?error=" + status);
         }
     }

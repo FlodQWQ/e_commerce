@@ -138,7 +138,6 @@ public class CommodityDAO {
                 list_commodities.put(index,tmpList);
             }
         }
-        System.out.println(list_commodities);
         for(Map.Entry<Integer,List<Integer>> entry: list_commodities.entrySet()){
             int seller_no = entry.getKey();
             if(!SellerDAO.isSellerExist(seller_no)){

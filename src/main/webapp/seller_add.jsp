@@ -9,20 +9,26 @@
 <html>
 <head>
     <title>添加新商家</title>
+    <link type="text/css" href="./commonStyle.css" rel="stylesheet"/>
 </head>
 <body>
-    <br/>
-    <h3 align="center"><u>添加新商家信息</u></h3>
-    <br/>
+    <h2 align="center">添加新商家信息</h2>
+    <div class="s_tab" id="s_tab">
+        <div class="s_tab_inner">
+            <a href="../e_commerce_war_exploded/seller_management" >回到上一级</a>
+            <a href="../e_commerce_war_exploded/"> 注销 </a>
+        </div>
+    </div>
+    <hr>
     <div align="center">
         <form action="selleradd" method="post">
-            <table border="1">
+            <table class="styled-table">
                 <tr>
                     <th>商家名称:</th>
                     <td><input type="text" name="seller_name"/> </td>
                 </tr>
                 <tr>
-                    <td colspan="2" align="right"><input type="submit"/> </td>
+                    <td colspan="2" align="right"><input type="submit" class="button" /> </td>
                 </tr>
             </table>
         </form>

@@ -12,6 +12,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>商家商品管理界面</title>
+    <link type="text/css" href="./commonStyle.css" rel="stylesheet"/>
     <script language="JavaScript" type="application/javascript">
         var str = window.location.href;
         var index = window.location.href.indexOf('=');
@@ -24,19 +25,11 @@
         function update(commodity_no){
                 window.location = "sellercommodityupdate?commodity_no=" + commodity_no + "&seller_no=" + seller_no;
         }
-    </script>
-    <style>
-        #s_tab {
-            float: none;
-            zoom: 1;
-        }
 
-        .s_tab {
-            line-height: 18px;
-            margin: 0 auto;
-            text-align: center;
+        function go_parent(){
+            window.location="../e_commerce_war_exploded/seller_management";
         }
-    </style>
+    </script>
 
 </head>
 <body>
@@ -45,16 +38,17 @@
     <form action="sellersearch" method="post">
         <input type="text" name="seller_search">
         &nbsp;&nbsp;
-        <input type="submit" value="搜索">
+        <input type="submit" class="buttonSearch" value="搜索">
     </form>
     <div class="s_tab_inner">
-        <a href="../e_commerce_war_exploded/select.jsp">回到上一级</a>
+        <a href="#" onclick="go_parent()">回到上一级</a>
+        <a href="../e_commerce_war_exploded/"> 注销 </a>
     </div>
 </div>
 <hr/>
 <br/>
 <div align="center">
-    <table border="1">
+    <table class="styled-table">
         <tr>
             <th>序号</th>
             <th>商品名称</th>
@@ -67,8 +61,8 @@
                 <td>${commodity.commodity_name}</td>
                 <td>${commodity.commodity_price}</td>
                 <td>
-                    <input type="button" value="删除" onclick="confirm_del(${commodity.commodity_no})" />
-                    <input type="button" value="修改" onclick="update(${commodity.commodity_no})">
+                    <input type="button" value="删除" class="button" onclick="confirm_del(${commodity.commodity_no})" />
+                    <input type="button" value="修改" class="button" onclick="update(${commodity.commodity_no})">
                 </td>
             </tr>
         </c:forEach>

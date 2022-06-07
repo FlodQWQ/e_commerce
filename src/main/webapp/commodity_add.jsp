@@ -12,23 +12,7 @@
 
 <head>
     <title>添加新商品</title>
-    <style>
-        .table {
-            width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        #s_tab {
-            float: none;
-            zoom: 1;
-        }
-
-        .s_tab {
-            line-height: 18px;
-            margin: 0 auto;
-            text-align: center;
-        }
-    </style>
+    <link type="text/css" href="./commonStyle.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -68,18 +52,18 @@
         document.getElementById("sellers").value = available.toString();
     }
 </script>
-<br>
-<h2 align="center"><u>添加新商品信息</u></h2>
+<h2 align="center">添加新商品信息</h2>
 <div class="s_tab" id="s_tab">
     <div class="s_tab_inner">
         <a href="../e_commerce_war_exploded/commodity_management">回到上一级</a>
+        <a href="../e_commerce_war_exploded/"> 注销 </a>
     </div>
 </div>
 <hr/>
 <br />
 <div align="center">
     <form action="commodityadd" method="post">
-        <table border="1">
+        <table class="styled-table">
             <input id="sellers" type="hidden" name="commodity_sellers" value="" />
             <tr>
                 <th>商品名称:</th>
@@ -90,7 +74,7 @@
                 <td><input type="number" step="0.01" name="commodity_price" /> </td>
             </tr>
             <tr>
-                <td colspan="2" align="right"><input type="submit"/> </td>
+                <td colspan="2" align="right"><input class="button" type="submit"/> </td>
             </tr>
         </table>
     </form>
@@ -100,7 +84,7 @@
 
     <table>
         <tr>
-            <td>
+            <td class="td_available">
                 <table width="300px" align="center" id="available">
                     <c:forEach items="${sellers}" var="seller" varStatus="status">
                     <tr>
@@ -111,7 +95,7 @@
                     </c:forEach>
                 </table>
             </td>
-            <td>
+            <td class="td_occupied">
                 <table width="300px" align="center" id="occupied">
                 </table>
             </td>

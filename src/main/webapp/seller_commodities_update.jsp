@@ -12,18 +12,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>商家商品修改</title>
-    <style>
-        #s_tab {
-            float: none;
-            zoom: 1;
-        }
-
-        .s_tab {
-            line-height: 18px;
-            margin: 0 auto;
-            text-align: center;
-        }
-    </style>
+    <link type="text/css" href="./commonStyle.css" rel="stylesheet"/>
 </head>
 <body>
 <script>
@@ -38,11 +27,11 @@
     }
 
 </script>
-<br>
-<h2 align="center"><u>商家商品信息修改</u></h2>
+<h2 align="center">商家商品信息修改</h2>
 <div class="s_tab" id="s_tab">
     <div class="s_tab_inner">
         <a href="#" onclick="go_parent()">回到上一级</a>
+        <a href="../e_commerce_war_exploded/"> 注销 </a>
     </div>
 </div>
 <hr/>
@@ -51,7 +40,7 @@
     <form action="sellercommodityupdate" method="post">
         <input type="hidden" name="commodity_no" value="${commodity.commodity_no}"/>
         <input id="seller_no" type="hidden" name="seller_no" value="" />
-        <table border="1">
+        <table class="styled-table">
             <tr>
                 <th>商品名称:</th>
                 <td><input id="name" type="text" name="commodity_name"/> </td>
